@@ -281,5 +281,19 @@ namespace ColorSplitter
                 UpdateOutputImage();
             }
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var bmp = State.GenerateRGBOctagon(pictureBox2.Width, pictureBox2.Height);
+            pictureBox2.Image = bmp;
+            State.InputImage = bmp;
+            UpdateOutputImage();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (State.InputImage == null) return;
+            pictureBox3.Image = State.GenerateMerged();
+        }
     }
 }
